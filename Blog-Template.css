@@ -1,0 +1,417 @@
+/* -----------------------------------------------------------Header----------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+header{
+    height: 90px;
+    padding: 0 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(180, 180, 180, 0.458);
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+#header-menu, #openMenu{
+    list-style: none;
+    display: flex;
+}
+
+#header-menu li, #openMenu li{
+    width: 80px;
+    height: 90px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#header-menu li:hover{
+    box-shadow: inset 0 -4px 0 0 black; /* inset ==> to make the shadow inside the element */
+    transition:ease-in-out all 0.3s;
+}
+
+.hamburger, #openMenu{
+    display: none;
+}
+
+@media only screen and (max-width: 990px) {
+    #header-menu{
+        display: none;
+    }
+    
+    header{
+        padding: 0 30px;
+        position: relative;
+    }
+    
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger span{
+        width: 25px;
+        height: 3px;
+        border-radius:2px;
+        display: flex;
+        margin-bottom: 5px;
+        background-color:black
+    }
+
+    #openMenu{
+        justify-content: center;
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        box-shadow:0px 10px 10px rgba(0, 0, 1, 0.175);
+    }
+
+    #openMenu ul{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    #openMenu li{
+        margin: 0 15px;
+        font-weight: bold;
+        font-size: large;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    #openMenu{
+        justify-content: flex-end
+    }
+    #openMenu li{
+        margin:-5px 10px;
+    }
+    #openMenu ul{
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column
+    }
+}
+
+/* -----------------------------------------------------------Content----------------------------------------------------------- */
+
+#content{
+    margin: 60px 160px;
+}
+
+/* -----------------------------------------------------------Second----------------------------------------------------------- */
+
+#second{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+@keyframes slideTransorm {
+    0% {
+        transform: matrix(1, -0.2, 0, 1, 0, 0);  /* matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) */
+        opacity: 0.1;
+    }
+    100% {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity:1;
+    }
+}
+
+#second img{
+    animation: 1s ease-in 0s 1 slideTransorm; /* speed - when to make the transform - how many times to make it */
+    width: 59%;
+}
+
+#second div{
+    width: 40%;
+    padding: 10px 40px
+}
+
+.first-ele{
+    font-family: 'Libre Franklin', sans-serif;
+    margin-bottom: 20px;
+    color: rgb(159, 157, 157);
+}
+#second h1{
+    font-family: 'Tenor Sans', sans-serif;
+    margin-bottom: 30px;
+    line-height: 40px;
+    font-weight: lighter;
+}
+
+#second p{
+    font-family: 'Source Serif Pro', sans-serif;
+    margin-bottom: 40px;
+    color: rgb(159, 157, 157);
+    line-height: 25px;
+}
+
+.last-ele{
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+.last-ele:hover, .first-ele:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 990px) {
+    #content{
+        margin: 20px 30px;
+    }
+
+    #second{
+        flex-direction: column;
+    }
+
+    #second img, #second div{
+        width: 100%;
+        padding: 15px 0
+    }
+
+    #second h1, #second p{
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    #second h1{
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+/* -----------------------------------------------------------Third/Forth/Fifth----------------------------------------------------------- */
+
+#third, #forth, #fifth{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#third div{
+    width: 32%;
+    margin-bottom: 40px;
+}
+
+#third div img, #forth div img, #fifth div img{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.para{
+    font-family: 'Tenor Sans', sans-serif;
+    font-weight:lighter;
+    margin-bottom: 15px;
+    font-size: large;
+}
+
+.horizontal_line{
+    border:none;
+    border-bottom: 1px solid rgba(180, 180, 180, 0.458);
+    margin: 50px 0;
+}
+
+/* -----------------------------------------------------------Forth----------------------------------------------------------- */
+
+#forth div{
+    width: 23.5%;
+    margin-bottom: 40px;
+}
+
+.btn button {
+    background-color:white;
+    padding:20px;
+    border: 1px solid black;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.btn button:hover{
+    background-color:black;
+    color:white;
+    transition:ease-in-out all 0.3s;
+    cursor: pointer;
+}
+
+/* -----------------------------------------------------------Fifth----------------------------------------------------------- */
+
+#fifth div{
+    width: 49%;
+    margin-bottom: 40px;
+}
+
+/* -----------------------------------------------------------Third/Forth/Fifth----------------------------------------------------------- */
+
+@media only screen and (max-width: 766px) {
+    #third div, #forth div, #fifth div{
+        width: 100%;
+    }
+}
+
+/* -----------------------------------------------------------Footer----------------------------------------------------------- */
+
+footer{
+    background-color:rgb(20, 20, 20);
+    padding: 80px 160px;
+}
+
+#logo2 {
+    display: flex;
+    align-items: flex-end;
+}
+
+#logo2 .first-ele{
+    margin: 0;
+    padding-left: 15px;
+    letter-spacing: 2px;
+}
+
+#cat-sub, #subscribe div{
+    display: flex;
+}
+
+#categories{
+    width: 75%;
+}
+
+#subscribe{
+    width: 25%;
+}
+
+#categories div{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+
+.para-list{
+    color: white;
+    width: 25%;
+    margin-bottom: 30px;
+    font-size:smaller;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="email"]{
+    padding: 15px;
+    width: 75%;
+    border: none;
+}
+
+input[type="submit"]{
+    border: none;
+    padding: 15px;
+    background-color:black;
+    color:white;
+    width: 25%;
+    cursor: pointer
+}
+
+#openMenu-categories, #open-cat{
+    display: none;
+}
+
+#last{
+    margin-top: 50px;
+    display:flex;
+    width: 75%;
+    flex-wrap: wrap;
+}
+
+#info, #follow, #template{
+    width: 33%;
+}
+
+#last .para-list{
+    width: 100%;
+}
+
+@media only screen and (max-width: 1106px){
+    header{
+        padding: 0 60px
+    }
+    #content{
+        margin: 20px 60px;
+    }
+    footer{
+        padding: 80px 60px 10px 60px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    footer{
+        padding: 80px 30px 10px 30px;
+    }
+
+    #cat-sub{
+        flex-direction: column-reverse;
+    }
+
+    #categories, #subscribe, #last{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    #logo2 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #logo2 .first-ele{
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    #categories div, #categories .first-ele{
+        display: none;
+    }
+    
+    #open-cat{
+        position: relative;
+        display:flex;
+        justify-content:space-around;
+        background-color: white;
+        padding:15px;
+        color: rgb(118, 116, 116);
+    }
+
+    section{
+        position: relative;
+    }
+    
+    #openMenu-categories{
+        position:absolute;
+        width: 100%;
+        background-color:white;
+    }
+    
+    #openMenu-categories li{
+        list-style-type: none;
+        font-weight: bold;
+        padding-bottom: 30px;
+    }
+
+    #info, #follow, #template{
+        width: 50%;
+    }
+}
